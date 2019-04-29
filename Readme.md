@@ -1,7 +1,7 @@
 # Личный проект «Что посмотреть» [![Build status][travis-image]][travis-url]
 
 * Студент: [Павел Гришин](https://up.htmlacademy.ru/react/1/user/77437).
-* Наставник: `Неизвестно`.
+* Наставник: [Александр Быков](https://htmlacademy.ru/profile/id7107)
 
 ---
 

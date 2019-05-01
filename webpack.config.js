@@ -22,5 +22,12 @@ module.exports = {
       }
     ],
   },
+  resolve: {
+    extensions: [`.js`, `.jsx`, `.json`, `.vue`, `.ts`, `.scss`, `.jpg`, `.html`],
+    alias: {
+      '@': path.resolve(__dirname, `src`),
+      '~': path.resolve(__dirname, `src`),
+    },
+  },
   devtool: `source-map`
 };

@@ -16,7 +16,13 @@ class App extends React.Component {
       title: `Macbeth`,
       image: `img/macbeth.jpg`
     }];
-    return <WelcomeScreen filmsList={filmsList}/>;
+    const onArticleTitleClick = function (e) {
+      e.preventDefault();
+    };
+    const onPlayBtnClick = function (e) {
+      e.preventDefault();
+    };
+    return <WelcomeScreen filmsList={filmsList} onPlayBtnClick={onPlayBtnClick} onArticleTitleClick={onArticleTitleClick}/>;
   }
 }
 

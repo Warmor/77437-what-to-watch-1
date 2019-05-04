@@ -5,12 +5,12 @@ class WelcomeScreen extends React.Component {
   render() {
     const smallMovieCardList = this.props.filmsList.map((film) =>
       <article className="small-movie-card catalog__movies-card" key={film.id}>
-        <button className="small-movie-card__play-btn" type="button">Play</button>
+        <button className="small-movie-card__play-btn" type="button" onClick={this.props.onPlayBtnClick}>Play</button>
         <div className="small-movie-card__image">
           <img src={film.image} alt="Fantastic Beasts: The Crimes of Grindelwald" width="280" height="175"/>
         </div>
         <h3 className="small-movie-card__title">
-          <a className="small-movie-card__link" href="movie-page.html">{film.title}</a>
+          <a className="small-movie-card__link" href="movie-page.html" onClick={this.props.onArticleTitleClick}>{film.title}</a>
         </h3>
       </article>
     );
@@ -114,7 +114,9 @@ class WelcomeScreen extends React.Component {
 }
 
 WelcomeScreen.propTypes = {
-  filmsList: PropTypes.array.isRequired
+  filmsList: PropTypes.array.isRequired,
+  onArticleTitleClick: PropTypes.func,
+  onPlayBtnClick: PropTypes.func
 };
 
 export default WelcomeScreen;

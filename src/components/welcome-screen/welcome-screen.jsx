@@ -1,19 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import CatalogMoviesList from "~/components/catalog-movies-list/catalog-movies-list";
 
-class WelcomeScreen extends React.Component {
+class WelcomeScreen extends React.PureComponent {
   render() {
-    const smallMovieCardList = this.props.filmsList.map((film) =>
-      <article className="small-movie-card catalog__movies-card" key={film.id}>
-        <button className="small-movie-card__play-btn" type="button" onClick={this.props.onPlayBtnClick}>Play</button>
-        <div className="small-movie-card__image">
-          <img src={film.image} alt="Fantastic Beasts: The Crimes of Grindelwald" width="280" height="175"/>
-        </div>
-        <h3 className="small-movie-card__title">
-          <a className="small-movie-card__link" href="movie-page.html" onClick={this.props.onArticleTitleClick}>{film.title}</a>
-        </h3>
-      </article>
-    );
     return <>
       <section className="movie-card">
         <div className="movie-card__bg">
@@ -104,9 +94,11 @@ class WelcomeScreen extends React.Component {
               <a href="#" className="catalog__genres-link">Thrillers</a>
             </li>
           </ul>
-          <div className="catalog__movies-list">
-            {smallMovieCardList}
-          </div>
+
+          <CatalogMoviesList
+            filmsList={this.props.filmsList}
+            onArticleTitleClick={this.props.onArticleTitleClick}/>
+
         </section>
       </div>
     </>;
@@ -116,7 +108,6 @@ class WelcomeScreen extends React.Component {
 WelcomeScreen.propTypes = {
   filmsList: PropTypes.array.isRequired,
   onArticleTitleClick: PropTypes.func,
-  onPlayBtnClick: PropTypes.func
 };
 
 export default WelcomeScreen;

@@ -5,7 +5,7 @@ import CatalogMoviesList from "~/components/catalog-movies-list/catalog-movies-l
 
 Enzyme.configure({adapter: new Adapter()});
 
-describe(`<WelcomeScreen/>`, () => {
+describe(`<CatalogMoviesList/>`, () => {
   const filmsList = [{
     id: 1,
     title: `Fantastic Beasts`,

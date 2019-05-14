@@ -1,5 +1,5 @@
 import React from 'react';
-import Enzyme, {shallow} from 'enzyme';
+import Enzyme, {mount} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import WelcomeScreen from "~/components/welcome-screen/welcome-screen";
 
@@ -13,18 +13,10 @@ describe(`<WelcomeScreen/>`, () => {
   }];
   it(`WelcomeScreen correctly click article title`, () => {
     const clickHandler = jest.fn();
-    const app = shallow(<WelcomeScreen filmsList={filmsList} onArticleTitleClick={clickHandler}/>);
+    const app = mount(<WelcomeScreen filmsList={filmsList} onArticleTitleClick={clickHandler}/>);
     const articleTitle = app.find(`.small-movie-card__link`);
     articleTitle.simulate(`click`, {preventDefault() {}});
     expect(clickHandler).toHaveBeenCalledTimes(1);
   });
-  it(`WelcomeScreen correctly click play btn`, () => {
-    const clickHandler = jest.fn();
-    const app = shallow(<WelcomeScreen filmsList={filmsList} onPlayBtnClick={clickHandler}/>);
-    const articleTitle = app.find(`.small-movie-card__play-btn`);
-    articleTitle.simulate(`click`, {preventDefault() {}});
-    expect(clickHandler).toHaveBeenCalledTimes(1);
-  });
-
 });
 

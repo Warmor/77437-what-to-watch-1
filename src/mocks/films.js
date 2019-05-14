@@ -14,4 +14,8 @@ export const filmsList = [{
   id: 4,
   title: `Aviator`,
   image: `img/aviator.jpg`
+}, {
+  id: 5,
+  title: `We need to talk about Kevin`,
+  image: `img/we-need-to-talk-about-kevin.jpg`
 }];

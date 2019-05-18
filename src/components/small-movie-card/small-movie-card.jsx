@@ -15,7 +15,7 @@ export default class SmallMovieCard extends React.Component {
     return (
       <article className="small-movie-card catalog__movies-card" onMouseEnter={() => this._handleMouseEnterCard()} onMouseLeave={() => this._handleMouseLeaveCard()}>
         <div className="small-movie-card__image">
-          { this.state.isActive && <VideoPlayer film={film} muted conprols/> }
+          { this.state.isActive && <VideoPlayer film={film} muted/> }
           { this.state.isActive || <img src={film.image} alt="Fantastic Beasts: The Crimes of Grindelwald" width="280" height="175"/> }
         </div>
         <h3 className="small-movie-card__title">

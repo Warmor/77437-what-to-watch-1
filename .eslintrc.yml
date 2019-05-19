@@ -10,10 +10,11 @@ extends: ['htmlacademy/es6', 'plugin:react/recommended']
 parserOptions:
   ecmaFeatures:
     jsx: true
-  ecmaVersion: 6
+  ecmaVersion: 8
   sourceType: module
 
 plugins: ['react']
+parser: "babel-eslint"
 
 settings:
   react:

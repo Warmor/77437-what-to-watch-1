@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import SmallMovieCard from '~/components/small-movie-card/small-movie-card';
+import {connect} from "react-redux";
 
-export default class CatalogMoviesList extends React.PureComponent {
+class CatalogMoviesList extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -23,7 +24,9 @@ export default class CatalogMoviesList extends React.PureComponent {
   render() {
     return (
       <div className="catalog__movies-list">
-        {this.props.filmsList.map((film) => {
+        {this.props.filmsList.filter((film) => {
+          return this.props.currentGenreId !== 0 ? film.genreId === this.props.currentGenreId : true;
+        }).map((film) => {
           return <SmallMovieCard
             key={film.id}
             film={film}
@@ -40,4 +43,16 @@ export default class CatalogMoviesList extends React.PureComponent {
 CatalogMoviesList.propTypes = {
   filmsList: PropTypes.array.isRequired,
   onArticleTitleClick: PropTypes.func,
+  currentGenreId: PropTypes.number.isRequired,
 };
+
+const mapStateToProps = (state, ownProps) => ({
+  ...ownProps,
+  currentGenreId: state.currentGenreId,
+});
+
+const mapDispatchToProps = () => ({});
+
+export {CatalogMoviesList};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CatalogMoviesList);

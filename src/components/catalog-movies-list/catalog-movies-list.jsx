@@ -9,9 +9,14 @@ export default class CatalogMoviesList extends React.PureComponent {
       activeFilm: null,
     };
   }
-  _onPlayBtnClick(film) {
+  _onMouseEnterCard(film) {
     this.setState({
       activeFilm: film,
+    });
+  }
+  _onMouseLeaveCard() {
+    this.setState({
+      activeFilm: null,
     });
   }
 
@@ -23,7 +28,9 @@ export default class CatalogMoviesList extends React.PureComponent {
             key={film.id}
             film={film}
             onArticleTitleClick={this.props.onArticleTitleClick}
-            onPlayBtnClick={() => this._onPlayBtnClick(film)}/>;
+            onMouseEnterCard={() => this._onMouseEnterCard(film)}
+            onMouseLeaveCard={() => this._onMouseLeaveCard()}
+          />;
         })}
       </div>
     );

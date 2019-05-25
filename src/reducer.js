@@ -7,16 +7,20 @@ const initialState = {
   films,
 };
 
+export const ActionType = {
+  SET_CURRENT_GENRE_ID: `SET_CURRENT_GENRE_ID`,
+};
+
 export const ActionCreator = {
-  [`SET_CURRENT_GENRE_ID`]: (genreId) => ({
-    type: `SET_CURRENT_GENRE_ID`,
+  setCurrentGenreId: (genreId) => ({
+    type: ActionType.SET_CURRENT_GENRE_ID,
     payload: genreId,
   })
 };
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case `SET_CURRENT_GENRE_ID`: return {
+    case ActionType.SET_CURRENT_GENRE_ID: return {
       ...state,
       currentGenreId: action.payload,
       films: films.filter((film) => {

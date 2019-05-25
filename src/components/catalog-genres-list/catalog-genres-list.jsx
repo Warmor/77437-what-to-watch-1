@@ -36,7 +36,7 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  onGenreLinkClick: (genreId) => dispatch(ActionCreator[`SET_CURRENT_GENRE_ID`](genreId))
+  onGenreLinkClick: (genreId) => dispatch(ActionCreator.setCurrentGenreId(genreId))
 });
 
 export {CatalogGenresList};

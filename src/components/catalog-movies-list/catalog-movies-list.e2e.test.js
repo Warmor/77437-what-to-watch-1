@@ -14,24 +14,24 @@ describe(`<CatalogMoviesList/>`, () => {
 
   it(`CatalogMoviesList correctly click article title`, () => {
     const clickHandler = jest.fn();
-    const app = mount(<CatalogMoviesList films={filmsList} onArticleTitleClick={clickHandler}/>);
-    const articleTitle = app.find(`.small-movie-card__link`);
+    const tree = mount(<CatalogMoviesList films={filmsList} onArticleTitleClick={clickHandler}/>);
+    const articleTitle = tree.find(`.small-movie-card__link`);
     articleTitle.simulate(`click`, {preventDefault() {}});
     expect(clickHandler).toHaveBeenCalledTimes(1);
   });
 
   it(`CatalogMoviesList correctly set state.activeFilm`, () => {
-    const app = mount(<CatalogMoviesList films={filmsList}/>);
-    const moviesCard = app.find(`.small-movie-card.catalog__movies-card`);
+    const tree = mount(<CatalogMoviesList films={filmsList}/>);
+    const moviesCard = tree.find(`.small-movie-card.catalog__movies-card`);
     moviesCard.simulate(`mouseEnter`);
-    expect(app.state(`activeFilm`)).toEqual(filmsList[0]);
+    expect(tree.state(`activeFilm`)).toEqual(filmsList[0]);
   });
 
   it(`CatalogMoviesList correctly remove state.activeFilm`, () => {
-    const app = mount(<CatalogMoviesList films={filmsList}/>);
-    const moviesCard = app.find(`.small-movie-card.catalog__movies-card`);
+    const tree = mount(<CatalogMoviesList films={filmsList}/>);
+    const moviesCard = tree.find(`.small-movie-card.catalog__movies-card`);
     moviesCard.simulate(`mouseLeave`);
-    expect(app.state(`activeFilm`)).toEqual(null);
+    expect(tree.state(`activeFilm`)).toEqual(null);
   });
 
 });

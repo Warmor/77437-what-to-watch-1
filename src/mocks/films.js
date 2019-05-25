@@ -1,4 +1,4 @@
-export const filmsList = [{
+export const films = [{
   id: 1,
   title: `Fantastic Beasts`,
   genreId: 1,

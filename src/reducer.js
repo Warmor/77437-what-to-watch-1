@@ -1,33 +1,10 @@
+import {genres} from "~/mocks/genres";
+import {films} from "~/mocks/films";
+
 const initialState = {
   currentGenreId: 0,
-  genres: [{
-    id: 1,
-    title: `Comedies`,
-  }, {
-    id: 2,
-    title: `Crime`,
-  }, {
-    id: 3,
-    title: `Documentary`,
-  }, {
-    id: 4,
-    title: `Dramas`,
-  }, {
-    id: 5,
-    title: `Horror`,
-  }, {
-    id: 6,
-    title: `Kids & Family`,
-  }, {
-    id: 7,
-    title: `Romance`,
-  }, {
-    id: 8,
-    title: `Sci-Fi`,
-  }, {
-    id: 9,
-    title: `Thrillers`,
-  }]
+  genres,
+  films,
 };
 
 export const ActionCreator = {
@@ -41,7 +18,10 @@ export const reducer = (state = initialState, action) => {
   switch (action.type) {
     case `SET_CURRENT_GENRE_ID`: return {
       ...state,
-      currentGenreId: action.payload
+      currentGenreId: action.payload,
+      films: films.filter((film) => {
+        return action.payload !== 0 ? film.genreId === action.payload : true;
+      })
     };
     default: return state;
   }

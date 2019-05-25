@@ -25,7 +25,7 @@ class CatalogGenresList extends React.PureComponent {
 
 CatalogGenresList.propTypes = {
   currentGenreId: PropTypes.number.isRequired,
-  genres: PropTypes.arrayOf(PropTypes.object),
+  genres: PropTypes.arrayOf(PropTypes.object).isRequired,
   onGenreLinkClick: PropTypes.func.isRequired,
 };
 

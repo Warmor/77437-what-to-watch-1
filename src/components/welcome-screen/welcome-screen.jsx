@@ -66,7 +66,6 @@ class WelcomeScreen extends React.PureComponent {
           <CatalogGenresList/>
 
           <CatalogMoviesList
-            filmsList={this.props.filmsList}
             onArticleTitleClick={this.props.onArticleTitleClick}/>
 
         </section>
@@ -76,7 +75,6 @@ class WelcomeScreen extends React.PureComponent {
 }
 
 WelcomeScreen.propTypes = {
-  filmsList: PropTypes.array.isRequired,
   onArticleTitleClick: PropTypes.func,
 };
 

@@ -24,9 +24,7 @@ class CatalogMoviesList extends React.PureComponent {
   render() {
     return (
       <div className="catalog__movies-list">
-        {this.props.filmsList.filter((film) => {
-          return this.props.currentGenreId !== 0 ? film.genreId === this.props.currentGenreId : true;
-        }).map((film) => {
+        {this.props.films.map((film) => {
           return <SmallMovieCard
             key={film.id}
             film={film}
@@ -41,14 +39,13 @@ class CatalogMoviesList extends React.PureComponent {
 }
 
 CatalogMoviesList.propTypes = {
-  filmsList: PropTypes.array.isRequired,
   onArticleTitleClick: PropTypes.func,
-  currentGenreId: PropTypes.number.isRequired,
+  films: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 const mapStateToProps = (state, ownProps) => ({
   ...ownProps,
-  currentGenreId: state.currentGenreId,
+  films: state.films,
 });
 
 const mapDispatchToProps = () => ({});

@@ -75,7 +75,7 @@ class WelcomeScreen extends React.PureComponent {
 }
 
 WelcomeScreen.propTypes = {
-  onArticleTitleClick: PropTypes.func,
+  onArticleTitleClick: PropTypes.func.isRequired,
 };
 
 export default WelcomeScreen;

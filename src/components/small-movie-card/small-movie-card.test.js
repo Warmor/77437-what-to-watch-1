@@ -1,5 +1,9 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import Enzyme, {shallow} from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import {shallowToJson} from 'enzyme-to-json';
+Enzyme.configure({adapter: new Adapter()});
+
 import SmallMovieCard from "~/components/small-movie-card/small-movie-card";
 
 describe(`<SmallMovieCard/>`, () => {
@@ -11,10 +15,8 @@ describe(`<SmallMovieCard/>`, () => {
     };
     const onArticleTitleClick = jest.fn();
     const onPlayBtnClick = jest.fn();
-    const tree = renderer
-      .create(<SmallMovieCard film={film} onArticleTitleClick={onArticleTitleClick} onPlayBtnClick={onPlayBtnClick}/>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const tree = shallow(<SmallMovieCard film={film} onArticleTitleClick={onArticleTitleClick} onPlayBtnClick={onPlayBtnClick}/>);
+    expect(shallowToJson(tree)).toMatchSnapshot();
   });
 });
 

@@ -3,5 +3,21 @@
 exports[`<CatalogMoviesList/> CatalogMoviesList renders correctly 1`] = `
 <div
   className="catalog__movies-list"
-/>
+>
+  <SmallMovieCard
+    film={
+      Object {
+        "genreId": 1,
+        "id": 1,
+        "image": "img/fantastic-beasts-the-crimes-of-grindelwald.jpg",
+        "title": "Fantastic Beasts",
+        "video": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
+      }
+    }
+    key="1"
+    onArticleTitleClick={[MockFunction]}
+    onMouseEnterCard={[Function]}
+    onMouseLeaveCard={[Function]}
+  />
+</div>
 `;

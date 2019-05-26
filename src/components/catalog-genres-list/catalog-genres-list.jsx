@@ -3,25 +3,23 @@ import PropTypes from 'prop-types';
 import {connect} from "react-redux";
 import {ActionCreator} from '~/reducer';
 
-class CatalogGenresList extends React.PureComponent {
-  render() {
-    return <>
-      <h2 className="catalog__title visually-hidden">Catalog</h2>
-      <ul className="catalog__genres-list">
-        <li className={[`catalog__genres-item`, this.props.currentGenreId === 0 ? `catalog__genres-item--active` : ``].join(` `)}>
-          <a href="#" className="catalog__genres-link" onClick={() => this.props.onGenreLinkClick(0)}>All genres</a>
-        </li>
-        {this.props.genres.map((genre) => {
-          return (
-            <li className={[`catalog__genres-item`, genre.id === this.props.currentGenreId ? `catalog__genres-item--active` : ``].join(` `)} key={genre.id}>
-              <a href="#" className="catalog__genres-link" onClick={() => this.props.onGenreLinkClick(genre.id)}>{genre.title}</a>
-            </li>
-          );
-        })}
-      </ul>
-    </>;
-  }
-}
+const CatalogGenresList = function () {
+  return <>
+    <h2 className="catalog__title visually-hidden">Catalog</h2>
+    <ul className="catalog__genres-list">
+      <li className={[`catalog__genres-item`, this.props.currentGenreId === 0 ? `catalog__genres-item--active` : ``].join(` `)}>
+        <a href="#" className="catalog__genres-link" onClick={() => this.props.onGenreLinkClick(0)}>All genres</a>
+      </li>
+      {this.props.genres.map((genre) => {
+        return (
+          <li className={[`catalog__genres-item`, genre.id === this.props.currentGenreId ? `catalog__genres-item--active` : ``].join(` `)} key={genre.id}>
+            <a href="#" className="catalog__genres-link" onClick={() => this.props.onGenreLinkClick(genre.id)}>{genre.title}</a>
+          </li>
+        );
+      })}
+    </ul>
+  </>;
+};
 
 CatalogGenresList.propTypes = {
   currentGenreId: PropTypes.number.isRequired,

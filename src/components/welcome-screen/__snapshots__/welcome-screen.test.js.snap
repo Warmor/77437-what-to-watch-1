@@ -146,7 +146,7 @@ exports[`<WelcomeScreen/> WelcomeScreen renders correctly 1`] = `
       className="catalog"
     >
       <ConnectFunction />
-      <ConnectFunction
+      <WithActiveFilm
         onArticleTitleClick={[MockFunction]}
       />
     </section>

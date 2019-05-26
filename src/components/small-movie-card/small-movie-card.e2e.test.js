@@ -15,7 +15,7 @@ describe(`<SmallMovieCard/>`, () => {
 
   it(`SmallMovieCard correctly eval callback mouseEnter`, () => {
     const mouseEnterHandler = jest.fn();
-    const smallMovieCard = mount(<SmallMovieCard film={film} onMouseEnterCard={mouseEnterHandler}/>);
+    const smallMovieCard = mount(<SmallMovieCard film={film} isActive={false} onMouseEnterCard={mouseEnterHandler}/>);
     const article = smallMovieCard.find(`.small-movie-card.catalog__movies-card`);
     article.simulate(`mouseEnter`, {preventDefault() {}});
     expect(mouseEnterHandler).toHaveBeenCalledTimes(1);
@@ -23,7 +23,7 @@ describe(`<SmallMovieCard/>`, () => {
 
   it(`SmallMovieCard correctly eval callback mouseLeave`, () => {
     const mouseLeaveHandler = jest.fn();
-    const smallMovieCard = mount(<SmallMovieCard film={film} onMouseLeaveCard={mouseLeaveHandler}/>);
+    const smallMovieCard = mount(<SmallMovieCard film={film} isActive={false} onMouseLeaveCard={mouseLeaveHandler}/>);
     const article = smallMovieCard.find(`.small-movie-card.catalog__movies-card`);
     article.simulate(`mouseLeave`, {preventDefault() {}});
     expect(mouseLeaveHandler).toHaveBeenCalledTimes(1);

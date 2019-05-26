@@ -20,18 +20,4 @@ describe(`<CatalogMoviesList/>`, () => {
     expect(clickHandler).toHaveBeenCalledTimes(1);
   });
 
-  it(`CatalogMoviesList correctly set state.activeFilm`, () => {
-    const tree = mount(<CatalogMoviesList films={filmsList}/>);
-    const moviesCard = tree.find(`.small-movie-card.catalog__movies-card`);
-    moviesCard.simulate(`mouseEnter`);
-    expect(tree.state(`activeFilm`)).toEqual(filmsList[0]);
-  });
-
-  it(`CatalogMoviesList correctly remove state.activeFilm`, () => {
-    const tree = mount(<CatalogMoviesList films={filmsList}/>);
-    const moviesCard = tree.find(`.small-movie-card.catalog__movies-card`);
-    moviesCard.simulate(`mouseLeave`);
-    expect(tree.state(`activeFilm`)).toEqual(null);
-  });
-
 });

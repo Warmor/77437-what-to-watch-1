@@ -14,6 +14,7 @@ exports[`<CatalogMoviesList/> CatalogMoviesList renders correctly 1`] = `
         "video": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
       }
     }
+    isActive={false}
     key="1"
     onArticleTitleClick={[MockFunction]}
     onMouseEnterCard={[Function]}

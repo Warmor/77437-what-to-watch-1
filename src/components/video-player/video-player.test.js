@@ -7,7 +7,7 @@ Enzyme.configure({adapter: new Adapter()});
 import VideoPlayer from "~/components/video-player/video-player.jsx";
 
 describe(`<VideoPlayer/>`, () => {
-  it(`WelcomeScreen renders correctly`, () => {
+  it(`VideoPlayer renders correctly`, () => {
     const mock = {
       src: `src:path`,
       poster: `poster:path`,

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<WelcomeScreen/> WelcomeScreen renders correctly 1`] = `
+exports[`<PageWelcome/> PageWelcome renders correctly 1`] = `
 <Fragment>
   <section
     className="movie-card"

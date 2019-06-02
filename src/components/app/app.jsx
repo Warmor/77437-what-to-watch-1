@@ -1,12 +1,12 @@
 import React from 'react';
-import WelcomeScreen from "~/components/welcome-screen/welcome-screen";
+import PageWelcome from "~/components/page-welcome/page-welcome";
 
 class App extends React.PureComponent {
   render() {
     const onArticleTitleClick = function (e) {
       e.preventDefault();
     };
-    return <WelcomeScreen onArticleTitleClick={onArticleTitleClick}/>;
+    return <PageWelcome onArticleTitleClick={onArticleTitleClick}/>;
   }
 }
 

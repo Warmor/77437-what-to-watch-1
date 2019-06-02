@@ -4,17 +4,17 @@ import Adapter from 'enzyme-adapter-react-16';
 import {createStore} from "redux";
 import {Provider} from "react-redux";
 import reducer from "~/reducer/reducer";
-import WelcomeScreen from "~/components/welcome-screen/welcome-screen";
+import PageWelcome from "~/components/page-welcome/page-welcome";
 
 
 Enzyme.configure({adapter: new Adapter()});
 const store = createStore(reducer);
 
-describe(`<WelcomeScreen/>`, () => {
-  it(`WelcomeScreen correctly render`, () => {
+describe(`<PageWelcome/>`, () => {
+  it(`PageWelcome correctly render`, () => {
     const clickHandler = jest.fn();
     mount(<Provider store={store}>
-      <WelcomeScreen onArticleTitleClick={clickHandler}/>
+      <PageWelcome onArticleTitleClick={clickHandler}/>
     </Provider>);
   });
 });

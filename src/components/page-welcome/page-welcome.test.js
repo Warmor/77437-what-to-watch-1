@@ -4,11 +4,11 @@ import Adapter from 'enzyme-adapter-react-16';
 import {shallowToJson} from 'enzyme-to-json';
 Enzyme.configure({adapter: new Adapter()});
 
-import WelcomeScreen from "~/components/welcome-screen/welcome-screen";
+import PageWelcome from "~/components/page-welcome/page-welcome";
 
-describe(`<WelcomeScreen/>`, () => {
-  it(`WelcomeScreen renders correctly`, () => {
-    const tree = shallow(<WelcomeScreen onArticleTitleClick={jest.fn()}/>);
+describe(`<PageWelcome/>`, () => {
+  it(`PageWelcome renders correctly`, () => {
+    const tree = shallow(<PageWelcome onArticleTitleClick={jest.fn()}/>);
     expect(shallowToJson(tree)).toMatchSnapshot();
   });
 });

@@ -6,7 +6,7 @@ import withActiveFilm from "~/hocs/with-active-film/with-active-film";
 
 const CatalogMoviesListWrap = withActiveFilm(CatalogMoviesList);
 
-class WelcomeScreen extends React.PureComponent {
+class PageWelcome extends React.PureComponent {
   render() {
     return <>
       <section className="movie-card">
@@ -76,8 +76,8 @@ class WelcomeScreen extends React.PureComponent {
   }
 }
 
-WelcomeScreen.propTypes = {
+PageWelcome.propTypes = {
   onArticleTitleClick: PropTypes.func.isRequired,
 };
 
-export default WelcomeScreen;
+export default PageWelcome;

@@ -1,11 +1,11 @@
 import NameSpace from "~/reducer/name-spaces";
 
-const NAME_SPACE_DATA = NameSpace.DATA;
+const NAME_SPACE = NameSpace.DATA;
 
 export const getGenres = (state) => {
-  return state[NAME_SPACE_DATA].genres;
+  return state[NAME_SPACE].genres;
 };
 
 export const getFilms = (state) => {
-  return state[NAME_SPACE_DATA].films;
+  return state[NAME_SPACE].films;
 };

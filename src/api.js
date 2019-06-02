@@ -9,7 +9,7 @@ export const createAPI = () => {
 
   const onSuccess = (response) => response;
   const onFail = (err) => {
-    return err;
+    throw err;
   };
 
   api.interceptors.response.use(onSuccess, onFail);

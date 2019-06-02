@@ -8,15 +8,12 @@ Enzyme.configure({adapter: new Adapter()});
 describe(`<CatalogGenresList/>`, () => {
   it(`CatalogGenresList correctly click catalog__genres-link`, () => {
     const mockProps = {
-      currentGenreId: 1,
-      genres: [{
-        id: 1,
-        title: `Comedies`,
-      }],
+      activeGenre: `Comedies`,
+      genres: [`Comedies`],
       onGenreLinkClick: jest.fn(),
     };
     const tree = shallow(<CatalogGenresList
-      currentGenreId={mockProps.currentGenreId}
+      activeGenre={mockProps.activeGenre}
       genres={mockProps.genres}
       onGenreLinkClick={mockProps.onGenreLinkClick}/>);
     const genresLink = tree.find(`.catalog__genres-link`).at(0);

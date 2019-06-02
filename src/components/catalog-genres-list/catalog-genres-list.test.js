@@ -9,15 +9,12 @@ import {CatalogGenresList} from "~/components/catalog-genres-list/catalog-genres
 describe(`<CatalogGenresList/>`, () => {
   it(`CatalogGenresList renders correctly`, () => {
     const mockProps = {
-      currentGenreId: 1,
-      genres: [{
-        id: 1,
-        title: `Comedies`,
-      }],
+      activeGenre: `Comedies`,
+      genres: [`Comedies`],
       onGenreLinkClick: jest.fn(),
     };
     const tree = shallow(<CatalogGenresList
-      currentGenreId={mockProps.currentGenreId}
+      activeGenre={mockProps.activeGenre}
       genres={mockProps.genres}
       onGenreLinkClick={mockProps.onGenreLinkClick}/>);
     expect(shallowToJson(tree)).toMatchSnapshot();

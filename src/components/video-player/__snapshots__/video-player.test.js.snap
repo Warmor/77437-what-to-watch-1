@@ -6,7 +6,8 @@ exports[`<VideoPlayer/> WelcomeScreen renders correctly 1`] = `
   controls={true}
   height="175"
   muted={true}
-  poster="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
+  poster="poster:path"
+  src="src:path"
   width="280"
 />
 `;

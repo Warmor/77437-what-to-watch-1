@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PageSignIn/> PageSignIn renders correctly 1`] = `
+<Fragment>
+  <div
+    className="user-page"
+  >
+    <ConnectFunction
+      headerTitle="Sign in"
+    />
+    <ConnectFunction />
+    <Footer />
+  </div>
+</Fragment>
+`;

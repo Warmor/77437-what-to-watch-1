@@ -1,19 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from "react-redux";
-import {ActionCreator} from '~/reducer';
+import {getGenres} from "~/reducer/data/selectors";
+import {getActiveGenre} from "~/reducer/catalog/selectors";
+
+import {ActionCreator} from "~/reducer/catalog/catalog";
 
 function CatalogGenresList(props) {
   return <>
     <h2 className="catalog__title visually-hidden">Catalog</h2>
     <ul className="catalog__genres-list">
-      <li className={[`catalog__genres-item`, props.currentGenreId === 0 ? `catalog__genres-item--active` : ``].join(` `)}>
-        <a href="#" className="catalog__genres-link" onClick={() => props.onGenreLinkClick(0)}>All genres</a>
+      <li className={[`catalog__genres-item`, props.activeGenre === `` ? `catalog__genres-item--active` : ``].join(` `)}>
+        <a href="#" className="catalog__genres-link" onClick={() => props.onGenreLinkClick(``)}>All genres</a>
       </li>
       {props.genres.map((genre) => {
         return (
-          <li className={[`catalog__genres-item`, genre.id === props.currentGenreId ? `catalog__genres-item--active` : ``].join(` `)} key={genre.id}>
-            <a href="#" className="catalog__genres-link" onClick={() => props.onGenreLinkClick(genre.id)}>{genre.title}</a>
+          <li className={[`catalog__genres-item`, genre === props.activeGenre ? `catalog__genres-item--active` : ``].join(` `)} key={`genre_title${genre}`}>
+            <a href="#" className="catalog__genres-link" onClick={() => props.onGenreLinkClick(genre)}>{genre}</a>
           </li>
         );
       })}
@@ -22,19 +25,19 @@ function CatalogGenresList(props) {
 }
 
 CatalogGenresList.propTypes = {
-  currentGenreId: PropTypes.number.isRequired,
-  genres: PropTypes.arrayOf(PropTypes.object).isRequired,
+  activeGenre: PropTypes.string.isRequired,
+  genres: PropTypes.array.isRequired,
   onGenreLinkClick: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state, ownProps) => ({
   ...ownProps,
-  currentGenreId: state.currentGenreId,
-  genres: state.genres,
+  activeGenre: getActiveGenre(state),
+  genres: getGenres(state),
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  onGenreLinkClick: (genreId) => dispatch(ActionCreator.setCurrentGenreId(genreId))
+  onGenreLinkClick: (genre) => dispatch(ActionCreator.setActiveGenre(genre))
 });
 
 export {CatalogGenresList};

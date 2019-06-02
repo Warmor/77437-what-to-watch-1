@@ -7,11 +7,11 @@ function SmallMovieCard(props) {
   return (
     <article className="small-movie-card catalog__movies-card" onMouseEnter={() => onMouseEnterCard()} onMouseLeave={() => onMouseLeaveCard()}>
       <div className="small-movie-card__image">
-        { isActive && <VideoPlayer film={film} muted/> }
-        { isActive || <img src={film.image} alt="Fantastic Beasts: The Crimes of Grindelwald" width="280" height="175"/> }
+        { isActive && <VideoPlayer src={film.preview_video_link} poster={film.preview_image} muted/> }
+        { isActive || <img src={film.preview_image} alt={film.name} width="280" height="175"/> }
       </div>
       <h3 className="small-movie-card__title">
-        <a className="small-movie-card__link" href="movie-page.html" onClick={onArticleTitleClick}>{film.title}</a>
+        <a className="small-movie-card__link" href="movie-page.html" onClick={onArticleTitleClick}>{film.name}</a>
       </h3>
     </article>
   );

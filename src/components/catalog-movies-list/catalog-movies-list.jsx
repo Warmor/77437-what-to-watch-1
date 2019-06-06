@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SmallMovieCard from '~/components/small-movie-card/small-movie-card';
 import {connect} from "react-redux";
+import {getActiveFilms} from "~/reducer/catalog/selectors";
+import SmallMovieCard from '~/components/small-movie-card/small-movie-card';
 
 function CatalogMoviesList(props) {
   const {
@@ -9,7 +10,6 @@ function CatalogMoviesList(props) {
     activeFilm,
     setActiveFilm,
     removeActiveFilm,
-    onArticleTitleClick
   } = props;
   return (
     <div className="catalog__movies-list">
@@ -18,7 +18,6 @@ function CatalogMoviesList(props) {
           key={film.id}
           film={film}
           isActive={!!(activeFilm && activeFilm.id === film.id)}
-          onArticleTitleClick={onArticleTitleClick}
           onMouseEnterCard={() => setActiveFilm(film)}
           onMouseLeaveCard={() => removeActiveFilm(film)}
         />;
@@ -32,12 +31,11 @@ CatalogMoviesList.propTypes = {
   activeFilm: PropTypes.object || PropTypes.null,
   setActiveFilm: PropTypes.func,
   removeActiveFilm: PropTypes.func,
-  onArticleTitleClick: PropTypes.func,
 };
 
 const mapStateToProps = (state, ownProps) => ({
   ...ownProps,
-  films: state.films,
+  films: getActiveFilms(state),
 });
 
 const mapDispatchToProps = () => ({});

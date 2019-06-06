@@ -7,13 +7,12 @@ Enzyme.configure({adapter: new Adapter()});
 import VideoPlayer from "~/components/video-player/video-player.jsx";
 
 describe(`<VideoPlayer/>`, () => {
-  it(`WelcomeScreen renders correctly`, () => {
-    const film = {
-      id: 1,
-      title: `Fantastic Beasts`,
-      image: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`
+  it(`VideoPlayer renders correctly`, () => {
+    const mock = {
+      src: `src:path`,
+      poster: `poster:path`,
     };
-    const tree = shallow(<VideoPlayer film={film} muted controls/>);
+    const tree = shallow(<VideoPlayer src={mock.src} poster={mock.poster} muted controls/>);
     expect(shallowToJson(tree)).toMatchSnapshot();
   });
 });

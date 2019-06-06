@@ -1,12 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<VideoPlayer/> WelcomeScreen renders correctly 1`] = `
+exports[`<VideoPlayer/> VideoPlayer renders correctly 1`] = `
 <video
   autoPlay={true}
   controls={true}
   height="175"
   muted={true}
-  poster="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
+  poster="poster:path"
+  src="src:path"
   width="280"
 />
 `;

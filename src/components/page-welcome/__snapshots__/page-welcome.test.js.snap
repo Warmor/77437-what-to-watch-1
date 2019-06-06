@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PageWelcome/> PageWelcome renders correctly 1`] = `
+<Fragment>
+  <section
+    className="movie-card"
+  >
+    <div
+      className="movie-card__bg"
+    >
+      <img
+        alt="The Grand Budapest Hotel"
+        src="img/bg-the-grand-budapest-hotel.jpg"
+      />
+    </div>
+    <h1
+      className="visually-hidden"
+    >
+      WTW
+    </h1>
+    <ConnectFunction
+      withAuth={true}
+    />
+    <MovieCardInfo
+      withPoser={true}
+    />
+  </section>
+  <div
+    className="page-content"
+  >
+    <section
+      className="catalog"
+    >
+      <ConnectFunction />
+      <WithActiveFilm />
+    </section>
+    <Footer />
+  </div>
+</Fragment>
+`;

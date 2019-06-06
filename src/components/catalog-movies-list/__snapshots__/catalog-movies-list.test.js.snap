@@ -16,7 +16,6 @@ exports[`<CatalogMoviesList/> CatalogMoviesList renders correctly 1`] = `
     }
     isActive={false}
     key="1"
-    onArticleTitleClick={[MockFunction]}
     onMouseEnterCard={[Function]}
     onMouseLeaveCard={[Function]}
   />

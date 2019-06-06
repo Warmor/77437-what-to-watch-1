@@ -2,14 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export default function VideoPlayer(props) {
-  let {film, muted, controls} = props;
+  let {src, poster, muted, controls} = props;
   return (
-    <video src={film.video} poster={film.image} width="280" height="175" muted={muted} controls={controls} autoPlay={true}/>
+    <video src={src} poster={poster} width="280" height="175" muted={muted} controls={controls} autoPlay={true}/>
   );
 }
 
 VideoPlayer.propTypes = {
-  film: PropTypes.object.isRequired,
+  src: PropTypes.string.isRequired,
+  poster: PropTypes.string.isRequired,
   muted: PropTypes.bool,
   controls: PropTypes.bool,
 };

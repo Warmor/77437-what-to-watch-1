@@ -32,9 +32,7 @@ exports[`<PageWelcome/> PageWelcome renders correctly 1`] = `
       className="catalog"
     >
       <ConnectFunction />
-      <WithActiveFilm
-        onArticleTitleClick={[MockFunction]}
-      />
+      <WithActiveFilm />
     </section>
     <Footer />
   </div>

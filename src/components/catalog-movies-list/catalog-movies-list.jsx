@@ -10,7 +10,6 @@ function CatalogMoviesList(props) {
     activeFilm,
     setActiveFilm,
     removeActiveFilm,
-    onArticleTitleClick
   } = props;
   return (
     <div className="catalog__movies-list">
@@ -19,7 +18,6 @@ function CatalogMoviesList(props) {
           key={film.id}
           film={film}
           isActive={!!(activeFilm && activeFilm.id === film.id)}
-          onArticleTitleClick={onArticleTitleClick}
           onMouseEnterCard={() => setActiveFilm(film)}
           onMouseLeaveCard={() => removeActiveFilm(film)}
         />;
@@ -33,7 +31,6 @@ CatalogMoviesList.propTypes = {
   activeFilm: PropTypes.object || PropTypes.null,
   setActiveFilm: PropTypes.func,
   removeActiveFilm: PropTypes.func,
-  onArticleTitleClick: PropTypes.func,
 };
 
 const mapStateToProps = (state, ownProps) => ({

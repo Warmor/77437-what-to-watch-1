@@ -1,7 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<App/> App renders correctly 1`] = `
-<PageWelcome
-  onArticleTitleClick={[Function]}
-/>
+<Fragment>
+  <Switch>
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/"
+    />
+    <ConnectFunction
+      component={[Function]}
+      path="/my-list"
+    />
+    <ConnectFunction
+      component={[Function]}
+      exact={true}
+      path="/login"
+    />
+  </Switch>
+</Fragment>
 `;

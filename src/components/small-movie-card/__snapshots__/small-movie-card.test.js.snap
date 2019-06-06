@@ -20,7 +20,6 @@ exports[`<SmallMovieCard/> SmallMovieCard renders correctly 1`] = `
     <a
       className="small-movie-card__link"
       href="movie-page.html"
-      onClick={[MockFunction]}
     />
   </h3>
 </article>

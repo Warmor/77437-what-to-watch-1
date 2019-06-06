@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import CatalogMoviesList from "~/components/catalog-movies-list/catalog-movies-list";
 import CatalogGenresList from "~/components/catalog-genres-list/catalog-genres-list";
 import withActiveFilm from "~/hocs/with-active-film/with-active-film";
@@ -23,16 +22,12 @@ class PageWelcome extends React.PureComponent {
       <div className="page-content">
         <section className="catalog">
           <CatalogGenresList/>
-          <CatalogMoviesListWrap onArticleTitleClick={this.props.onArticleTitleClick}/>
+          <CatalogMoviesListWrap/>
         </section>
         <Footer/>
       </div>
     </>;
   }
 }
-
-PageWelcome.propTypes = {
-  onArticleTitleClick: PropTypes.func.isRequired,
-};
 
 export default PageWelcome;

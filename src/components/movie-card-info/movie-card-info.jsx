@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Link} from "react-router-dom";
 
 function MovieCardInfo(props) {
   const {
@@ -32,6 +33,7 @@ function MovieCardInfo(props) {
               </svg>
               <span>My list</span>
             </button>
+            <Link to="/my-list" className="btn movie-card__button">My list</Link>
             <a href="add-review.html" className="btn movie-card__button">Add review</a>
           </div>
         </div>

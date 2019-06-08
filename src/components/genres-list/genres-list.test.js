@@ -4,7 +4,7 @@ import Adapter from 'enzyme-adapter-react-16';
 import {shallowToJson} from 'enzyme-to-json';
 Enzyme.configure({adapter: new Adapter()});
 
-import {CatalogGenresList} from "~/components/catalog-genres-list/catalog-genres-list.jsx";
+import GenresList from "~/components/genres-list/genres-list.jsx";
 
 describe(`<CatalogGenresList/>`, () => {
   it(`CatalogGenresList renders correctly`, () => {
@@ -13,7 +13,7 @@ describe(`<CatalogGenresList/>`, () => {
       genres: [`Comedies`],
       onGenreLinkClick: jest.fn(),
     };
-    const tree = shallow(<CatalogGenresList
+    const tree = shallow(<GenresList
       activeGenre={mockProps.activeGenre}
       genres={mockProps.genres}
       onGenreLinkClick={mockProps.onGenreLinkClick}/>);

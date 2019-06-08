@@ -16,8 +16,15 @@ describe(`<PageWelcome/>`, () => {
         image: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
         video: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
       }],
+      activeGenre: `Comedies`,
+      genres: [`Comedies`],
+      setActiveGenre: jest.fn(),
     };
-    const tree = shallow(<PageWelcome films={mockProps.films}/>);
+    const tree = shallow(<PageWelcome
+      films={mockProps.films}
+      genres={mockProps.genres}
+      activeGenre={mockProps.activeGenre}
+      setActiveGenre={mockProps.setActiveGenre}/>);
     expect(shallowToJson(tree)).toMatchSnapshot();
   });
 });

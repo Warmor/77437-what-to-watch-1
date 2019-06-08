@@ -31,7 +31,15 @@ exports[`<PageWelcome/> PageWelcome renders correctly 1`] = `
     <section
       className="catalog"
     >
-      <ConnectFunction />
+      <GenresList
+        activeGenre="Comedies"
+        genres={
+          Array [
+            "Comedies",
+          ]
+        }
+        onGenreLinkClick={[MockFunction]}
+      />
       <MoviesList
         films={
           Array [

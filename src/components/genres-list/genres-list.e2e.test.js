@@ -1,18 +1,18 @@
 import React from 'react';
 import Enzyme, {shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import {CatalogGenresList} from "~/components/catalog-genres-list/catalog-genres-list";
+import GenresList from "~/components/genres-list/genres-list";
 
 Enzyme.configure({adapter: new Adapter()});
 
-describe(`<CatalogGenresList/>`, () => {
-  it(`CatalogGenresList correctly click catalog__genres-link`, () => {
+describe(`<GenresList/>`, () => {
+  it(`GenresList correctly click catalog__genres-link`, () => {
     const mockProps = {
       activeGenre: `Comedies`,
       genres: [`Comedies`],
       onGenreLinkClick: jest.fn(),
     };
-    const tree = shallow(<CatalogGenresList
+    const tree = shallow(<GenresList
       activeGenre={mockProps.activeGenre}
       genres={mockProps.genres}
       onGenreLinkClick={mockProps.onGenreLinkClick}/>);

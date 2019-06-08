@@ -4,7 +4,7 @@ exports[`<MoviesList/> MoviesList renders correctly 1`] = `
 <div
   className="catalog__movies-list"
 >
-  <SmallMovieCard
+  <WithActiveFilm
     film={
       Object {
         "genreId": 1,
@@ -14,10 +14,7 @@ exports[`<MoviesList/> MoviesList renders correctly 1`] = `
         "video": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
       }
     }
-    isActive={false}
     key="1"
-    onMouseEnterCard={[Function]}
-    onMouseLeaveCard={[Function]}
   />
 </div>
 `;

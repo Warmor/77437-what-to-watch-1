@@ -8,7 +8,7 @@ import PageWelcome from "~/components/page-welcome/page-welcome";
 
 describe(`<PageWelcome/>`, () => {
   it(`PageWelcome renders correctly`, () => {
-    const tree = shallow(<PageWelcome onArticleTitleClick={jest.fn()}/>);
+    const tree = shallow(<PageWelcome/>);
     expect(shallowToJson(tree)).toMatchSnapshot();
   });
 });

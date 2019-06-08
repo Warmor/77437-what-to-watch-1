@@ -6,8 +6,6 @@ import Footer from "~/components/footer/footer";
 import Header from "~/components/header/header";
 import MovieCardInfo from "~/components/movie-card-info/movie-card-info";
 
-
-
 class PageWelcome extends React.PureComponent {
   render() {
     return <>

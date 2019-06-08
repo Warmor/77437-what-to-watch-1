@@ -11,7 +11,7 @@ describe(`Reducer works correctly`, () => {
     const api = createAPI();
     const dispatch = jest.fn();
     const apiMock = new MockAdapter(api);
-    const dataLoader = Operation.loadData();
+    const dataLoader = Operation.loadFilmsAndGenre();
 
     apiMock
       .onGet(`/films`)
@@ -19,9 +19,9 @@ describe(`Reducer works correctly`, () => {
 
     return dataLoader(dispatch, jest.fn(), api)
       .then(() => {
-        expect(dispatch).toHaveBeenCalledTimes(1);
-        expect(dispatch).toHaveBeenNthCalledWith(1, {
-          type: ActionType.SET_DATA,
+        expect(dispatch).toHaveBeenCalledTimes(2);
+        expect(dispatch).toHaveBeenNthCalledWith(2, {
+          type: ActionType.SET_GENRE,
           payload: [{fake: true}],
         });
       });

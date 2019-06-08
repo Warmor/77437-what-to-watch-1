@@ -7,7 +7,6 @@ import {Provider} from "react-redux";
 import {BrowserRouter} from "react-router-dom";
 import App from '~/components/app/app.jsx';
 import reducer from "~/reducer/reducer";
-import {Operation as OperationData} from "./reducer/data/data";
 import {Operation as OperationUser} from "~/reducer/user/user";
 
 import {createAPI} from '~/api';
@@ -22,8 +21,6 @@ async function init() {
           window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
       )
   );
-
-  await store.dispatch(OperationData.loadData());
   await store.dispatch(OperationUser.checkLoginUser());
   ReactDOM.render(
       <Provider store={store}>

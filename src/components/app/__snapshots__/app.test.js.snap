@@ -17,7 +17,15 @@ exports[`<App/> App renders correctly 1`] = `
       path="/"
     />
     <ConnectFunction
-      component={[Function]}
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "displayName": "Connect(PageMyList)",
+          "type": [Function],
+        }
+      }
       path="/my-list"
     />
     <ConnectFunction

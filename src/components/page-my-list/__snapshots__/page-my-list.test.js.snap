@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PageMyList/> PageMyList renders correctly 1`] = `
+<Fragment>
+  <div
+    className="user-page"
+  >
+    <ConnectFunction
+      headerTitle="My list"
+      withAuth={true}
+    />
+    <MoviesList
+      films={
+        Array [
+          Object {
+            "genreId": 1,
+            "id": 1,
+            "image": "img/fantastic-beasts-the-crimes-of-grindelwald.jpg",
+            "title": "Fantastic Beasts",
+            "video": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
+          },
+        ]
+      }
+    />
+    <Footer />
+  </div>
+</Fragment>
+`;

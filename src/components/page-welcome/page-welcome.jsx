@@ -9,9 +9,13 @@ import GenresList from "~/components/genres-list/genres-list";
 import MovieCardInfo from "~/components/movie-card-info/movie-card-info";
 import PropTypes from "prop-types";
 import {getGenres} from "~/reducer/data/selectors";
-import {ActionCreator} from "~/reducer/catalog/catalog";
+import {ActionCreator as ActionCatalog} from "~/reducer/catalog/catalog";
+import {Operation as OperationData} from "~/reducer/data/data";
 
 class PageWelcome extends React.PureComponent {
+  componentDidMount() {
+    this.props.loadFilmsAndGenre();
+  }
   render() {
     return <>
       <section className="movie-card">
@@ -41,6 +45,7 @@ PageWelcome.propTypes = {
   genres: PropTypes.array.isRequired,
   activeGenre: PropTypes.string.isRequired,
   setActiveGenre: PropTypes.func.isRequired,
+  loadFilmsAndGenre: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state, ownProps) => ({
@@ -51,7 +56,8 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  setActiveGenre: (genre) => dispatch(ActionCreator.setActiveGenre(genre))
+  setActiveGenre: (genre) => dispatch(ActionCatalog.setActiveGenre(genre)),
+  loadFilmsAndGenre: (genre) => dispatch(OperationData.loadFilmsAndGenre(genre))
 });
 
 export {PageWelcome};

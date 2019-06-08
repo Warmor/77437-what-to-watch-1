@@ -4,11 +4,20 @@ import Adapter from 'enzyme-adapter-react-16';
 import {shallowToJson} from 'enzyme-to-json';
 Enzyme.configure({adapter: new Adapter()});
 
-import PageWelcome from "~/components/page-welcome/page-welcome";
+import {PageWelcome} from "~/components/page-welcome/page-welcome";
 
 describe(`<PageWelcome/>`, () => {
   it(`PageWelcome renders correctly`, () => {
-    const tree = shallow(<PageWelcome/>);
+    const mockProps = {
+      films: [{
+        id: 1,
+        title: `Fantastic Beasts`,
+        genreId: 1,
+        image: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
+        video: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+      }],
+    };
+    const tree = shallow(<PageWelcome films={mockProps.films}/>);
     expect(shallowToJson(tree)).toMatchSnapshot();
   });
 });

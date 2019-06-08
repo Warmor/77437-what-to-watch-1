@@ -4,7 +4,7 @@ import Adapter from 'enzyme-adapter-react-16';
 import {shallowToJson} from 'enzyme-to-json';
 Enzyme.configure({adapter: new Adapter()});
 
-import {MoviesList} from "~/components/movies-list/movies-list";
+import MoviesList from "~/components/movies-list/movies-list";
 
 describe(`<MoviesList/>`, () => {
   it(`MoviesList renders correctly`, () => {

@@ -4,7 +4,15 @@ exports[`<App/> App renders correctly 1`] = `
 <Fragment>
   <Switch>
     <Route
-      component={[Function]}
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "displayName": "Connect(PageWelcome)",
+          "type": [Function],
+        }
+      }
       exact={true}
       path="/"
     />

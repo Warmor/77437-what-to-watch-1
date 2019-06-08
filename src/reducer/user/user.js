@@ -1,5 +1,3 @@
-import Cookies from "js-cookie";
-
 const initialState = {
   user: {},
   loginError: ``,
@@ -45,11 +43,7 @@ export const Operation = {
     });
   },
   checkLoginUser: () => (dispatch) => {
-    let isAuth = Cookies.get(`authToken`);
-    if (isAuth) {
-      return dispatch(Operation.fetchUser());
-    }
-    return false;
+    return dispatch(Operation.fetchUser());
   }
 };
 

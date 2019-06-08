@@ -4,7 +4,7 @@ import {connect} from "react-redux";
 import {getActiveFilms} from "~/reducer/catalog/selectors";
 import SmallMovieCard from '~/components/small-movie-card/small-movie-card';
 
-function CatalogMoviesList(props) {
+function MoviesList(props) {
   const {
     films,
     activeFilm,
@@ -26,7 +26,7 @@ function CatalogMoviesList(props) {
   );
 }
 
-CatalogMoviesList.propTypes = {
+MoviesList.propTypes = {
   films: PropTypes.arrayOf(PropTypes.object).isRequired,
   activeFilm: PropTypes.object || PropTypes.null,
   setActiveFilm: PropTypes.func,
@@ -40,6 +40,6 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = () => ({});
 
-export {CatalogMoviesList};
+export {MoviesList};
 
-export default connect(mapStateToProps, mapDispatchToProps)(CatalogMoviesList);
+export default connect(mapStateToProps, mapDispatchToProps)(MoviesList);

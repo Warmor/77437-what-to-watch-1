@@ -67,12 +67,6 @@ exports[`<MovieCardInfo/> MovieCardInfo renders correctly 1`] = `
               My list
             </span>
           </button>
-          <Link
-            className="btn movie-card__button"
-            to="/my-list"
-          >
-            My list
-          </Link>
           <a
             className="btn movie-card__button"
             href="add-review.html"

@@ -1,12 +1,12 @@
 import React from 'react';
 import MoviesList from "~/components/movies-list/movies-list";
 import CatalogGenresList from "~/components/catalog-genres-list/catalog-genres-list";
-import withActiveFilm from "~/hocs/with-active-film/with-active-film";
+
 import Footer from "~/components/footer/footer";
 import Header from "~/components/header/header";
 import MovieCardInfo from "~/components/movie-card-info/movie-card-info";
 
-const MoviesListWrap = withActiveFilm(MoviesList);
+
 
 class PageWelcome extends React.PureComponent {
   render() {
@@ -22,7 +22,7 @@ class PageWelcome extends React.PureComponent {
       <div className="page-content">
         <section className="catalog">
           <CatalogGenresList/>
-          <MoviesListWrap/>
+          <MoviesList/>
         </section>
         <Footer/>
       </div>

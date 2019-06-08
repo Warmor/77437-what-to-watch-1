@@ -23,11 +23,11 @@ function Header(props) {
 
       {headerTitle && <h1 className="page-title user-page__title">{headerTitle}</h1>}
       {withAuth && isLoggedIn && (
-        <div className="user-block">
+        <Link to="/my-list" className="user-block">
           <div className="user-block__avatar">
             <img src={`https://es31-server.appspot.com${user.avatar_url}`} alt={user.name} width="63" height="63"/>
           </div>
-        </div>
+        </Link>
       )}
       {withAuth && !isLoggedIn && (
         <div className="user-block">

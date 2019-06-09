@@ -19,14 +19,12 @@ describe(`<PageWelcome/>`, () => {
       activeGenre: `Comedies`,
       genres: [`Comedies`],
       setActiveGenre: jest.fn(),
-      loadFilmsAndGenre: jest.fn(),
     };
     const tree = shallow(<PageWelcome
       films={mockProps.films}
       genres={mockProps.genres}
       activeGenre={mockProps.activeGenre}
-      setActiveGenre={mockProps.setActiveGenre}
-      loadFilmsAndGenre={mockProps.loadFilmsAndGenre}/>);
+      setActiveGenre={mockProps.setActiveGenre}/>);
     expect(shallowToJson(tree)).toMatchSnapshot();
   });
 });

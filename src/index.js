@@ -5,11 +5,13 @@ import {compose} from "recompose";
 import {applyMiddleware, createStore} from "redux";
 import {Provider} from "react-redux";
 import {BrowserRouter} from "react-router-dom";
+import {createAPI} from '~/api';
 import App from '~/components/app/app.jsx';
 import reducer from "~/reducer/reducer";
 import {Operation as OperationUser} from "~/reducer/user/user";
-
-import {createAPI} from '~/api';
+import {Operation as OperationData} from "~/reducer/data/data";
+import {Operation as OperationCatalog} from "~/reducer/catalog/catalog";
+import {Operation as OperationFavorite} from "~/reducer/favorite/favorite";
 
 async function init() {
   const api = createAPI();
@@ -22,6 +24,11 @@ async function init() {
       )
   );
   await store.dispatch(OperationUser.checkLoginUser());
+  await Promise.all([
+    store.dispatch(OperationData.loadFilmsAndGenre()),
+    store.dispatch(OperationCatalog.loadPromoFilm()),
+    store.dispatch(OperationFavorite.loadFavorite()),
+  ]);
   ReactDOM.render(
       <Provider store={store}>
         <BrowserRouter>

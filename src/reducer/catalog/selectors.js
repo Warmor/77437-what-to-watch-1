@@ -8,6 +8,10 @@ export const getActiveGenre = (state) => {
   return state[NAME_SPACE].activeGenre;
 };
 
+export const getPromoFilm = (state) => {
+  return state[NAME_SPACE].promoFilm;
+};
+
 export const getActiveFilms = createSelector(getActiveGenre, getFilms, (activeGenre, films) => {
   return films.filter((film) => {
     return activeGenre !== `` ? film.genre === activeGenre : true;

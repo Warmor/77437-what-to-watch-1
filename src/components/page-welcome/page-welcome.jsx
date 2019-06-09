@@ -1,30 +1,26 @@
 import React from 'react';
+import PropTypes from "prop-types";
 import {connect} from "react-redux";
-import {getActiveFilms, getActiveGenre} from "~/reducer/catalog/selectors";
-
 import Footer from "~/components/footer/footer";
 import Header from "~/components/header/header";
 import MoviesList from "~/components/movies-list/movies-list";
 import GenresList from "~/components/genres-list/genres-list";
 import MovieCardInfo from "~/components/movie-card-info/movie-card-info";
-import PropTypes from "prop-types";
 import {getGenres} from "~/reducer/data/selectors";
+import {getActiveFilms, getActiveGenre, getPromoFilm} from "~/reducer/catalog/selectors";
 import {ActionCreator as ActionCatalog} from "~/reducer/catalog/catalog";
-import {Operation as OperationData} from "~/reducer/data/data";
 
 class PageWelcome extends React.PureComponent {
-  componentDidMount() {
-    this.props.loadFilmsAndGenre();
-  }
+
   render() {
     return <>
       <section className="movie-card">
         <div className="movie-card__bg">
-          <img src="img/bg-the-grand-budapest-hotel.jpg" alt="The Grand Budapest Hotel"/>
+          <img src={this.props.promoFilm && this.props.promoFilm.backgroundImage} alt={this.props.promoFilm && this.props.promoFilm.name}/>
         </div>
         <h1 className="visually-hidden">WTW</h1>
         <Header withAuth/>
-        <MovieCardInfo withPoser/>
+        {(this.props.promoFilm && <MovieCardInfo film={this.props.promoFilm} withPoser/>)}
       </section>
       <div className="page-content">
         <section className="catalog">
@@ -43,9 +39,9 @@ class PageWelcome extends React.PureComponent {
 PageWelcome.propTypes = {
   films: PropTypes.arrayOf(PropTypes.object).isRequired,
   genres: PropTypes.array.isRequired,
+  promoFilm: PropTypes.object,
   activeGenre: PropTypes.string.isRequired,
   setActiveGenre: PropTypes.func.isRequired,
-  loadFilmsAndGenre: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state, ownProps) => ({
@@ -53,11 +49,11 @@ const mapStateToProps = (state, ownProps) => ({
   films: getActiveFilms(state),
   activeGenre: getActiveGenre(state),
   genres: getGenres(state),
+  promoFilm: getPromoFilm(state),
 });
 
 const mapDispatchToProps = (dispatch) => ({
   setActiveGenre: (genre) => dispatch(ActionCatalog.setActiveGenre(genre)),
-  loadFilmsAndGenre: (genre) => dispatch(OperationData.loadFilmsAndGenre(genre))
 });
 
 export {PageWelcome};

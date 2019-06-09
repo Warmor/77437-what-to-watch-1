@@ -13,22 +13,16 @@ exports[`<MovieCardInfo/> MovieCardInfo renders correctly 1`] = `
       >
         <h2
           className="movie-card__title"
-        >
-          The Grand Budapest Hotel
-        </h2>
+        />
         <p
           className="movie-card__meta"
         >
           <span
             className="movie-card__genre"
-          >
-            Drama
-          </span>
+          />
           <span
             className="movie-card__year"
-          >
-            2014
-          </span>
+          />
         </p>
         <div
           className="movie-card__buttons"
@@ -52,6 +46,7 @@ exports[`<MovieCardInfo/> MovieCardInfo renders correctly 1`] = `
           </button>
           <button
             className="btn btn--list movie-card__button"
+            onClick={[Function]}
             type="button"
           >
             <svg
@@ -60,7 +55,7 @@ exports[`<MovieCardInfo/> MovieCardInfo renders correctly 1`] = `
               width="19"
             >
               <use
-                xlinkHref="#add"
+                xlinkHref="#in-list"
               />
             </svg>
             <span>

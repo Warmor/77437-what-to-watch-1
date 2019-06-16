@@ -1,3 +1,18 @@
+const getRatingTitle = (rating) => {
+  if (+rating === 10) {
+    return `Awesome`;
+  } else if (+rating >= 8 && +rating < 10) {
+    return `Very good`;
+  } else if (+rating >= 5 && +rating < 8) {
+    return `Good`;
+  } else if (+rating >= 3 && +rating < 5) {
+    return `Normal`;
+  } else if (+rating >= 0 && +rating < 3) {
+    return `Bad`;
+  }
+  return `Error`;
+};
+
 export const adapterFilm = (film) => ({
   backgroundColor: film.background_color,
   backgroundImage: film.background_image,
@@ -11,6 +26,7 @@ export const adapterFilm = (film) => ({
   previewImage: film.preview_image,
   previewVideoLink: film.preview_video_link,
   rating: film.rating,
+  ratingTitle: getRatingTitle(film.rating),
   released: film.released,
   runTime: film.run_time,
   scoresCount: film.scores_count,

@@ -6,9 +6,9 @@ import Header from "~/components/header/header";
 import MoviesList from "~/components/movies-list/movies-list";
 import GenresList from "~/components/genres-list/genres-list";
 import MovieCardInfo from "~/components/movie-card-info/movie-card-info";
-import {getGenres} from "~/reducer/data/selectors";
-import {getActiveFilms, getActiveGenre, getPromoFilm} from "~/reducer/catalog/selectors";
-import {ActionCreator as ActionCatalog} from "~/reducer/catalog/catalog";
+import {getGenres} from "~/reducer/films/selectors";
+import {getActiveFilms, getActiveGenre, getPromoFilm} from "~/reducer/films/selectors";
+import {ActionCreator as ActionCatalog} from "~/reducer/films/films";
 
 class PageWelcome extends React.PureComponent {
 

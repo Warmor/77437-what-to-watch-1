@@ -9,8 +9,7 @@ import {createAPI} from '~/api';
 import App from '~/components/app/app.jsx';
 import reducer from "~/reducer/reducer";
 import {Operation as OperationUser} from "~/reducer/user/user";
-import {Operation as OperationData} from "~/reducer/data/data";
-import {Operation as OperationCatalog} from "~/reducer/catalog/catalog";
+import {Operation as OperationFilms} from "~/reducer/films/films";
 import {Operation as OperationFavorite} from "~/reducer/favorite/favorite";
 
 async function init() {
@@ -25,8 +24,8 @@ async function init() {
   );
   await store.dispatch(OperationUser.checkLoginUser());
   await Promise.all([
-    store.dispatch(OperationData.loadFilmsAndGenre()),
-    store.dispatch(OperationCatalog.loadPromoFilm()),
+    store.dispatch(OperationFilms.loadFilmsAndGenre()),
+    store.dispatch(OperationFilms.loadPromoFilm()),
     store.dispatch(OperationFavorite.loadFavorite()),
   ]);
   ReactDOM.render(

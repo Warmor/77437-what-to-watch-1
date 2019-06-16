@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Link} from "react-router-dom";
 import {connect} from "react-redux";
 import {getFavoriteIdList} from "~/reducer/favorite/selectors";
 import {Operation as OperationFavorite} from "~/reducer/favorite/favorite";
@@ -50,7 +51,7 @@ function MovieCardInfo(props) {
                 <span>My list</span>
               </button>
             )}
-            <a href="add-review.html" className="btn movie-card__button">Add review</a>
+            <Link to={`/film/${film.id}/review`} className="btn movie-card__button">Add review</Link>
           </div>
         </div>
       </div>

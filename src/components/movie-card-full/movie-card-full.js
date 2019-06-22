@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from "prop-types";
 import {Switch} from "react-router-dom";
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import MovieCardFullDetails from "~/components/movie-card-full-details/movie-card-full-details";
 import MovieCardFullOverview from "~/components/movie-card-full-overview/movie-card-full-overview";
 import MovieCardFullReviews from "~/components/movie-card-full-reviews/movie-card-full-reviews";
@@ -20,14 +20,14 @@ function MovieCardFull(props) {
         <div className="movie-card__desc">
           <nav className="movie-nav movie-card__nav">
             <ul className="movie-nav__list">
-              <li className="movie-nav__item movie-nav__item--active">
-                <Link to={`/film/${film.id}`} className="movie-nav__link">Overview</Link>
+              <li className="movie-nav__item">
+                <NavLink exact to={`/film/${film.id}`} className="movie-nav__link" activeClassName="movie-nav__link--active">Overview</NavLink>
               </li>
               <li className="movie-nav__item">
-                <Link to={`/film/${film.id}/details`} className="movie-nav__link">Details</Link>
+                <NavLink to={`/film/${film.id}/details`} className="movie-nav__link" activeClassName="movie-nav__link--active">Details</NavLink>
               </li>
               <li className="movie-nav__item">
-                <Link to={`/film/${film.id}/reviews`} className="movie-nav__link">Reviews</Link>
+                <NavLink to={`/film/${film.id}/reviews`} className="movie-nav__link" activeClassName="movie-nav__link--active">Reviews</NavLink>
               </li>
             </ul>
           </nav>

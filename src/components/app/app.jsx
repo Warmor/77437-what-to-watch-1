@@ -14,7 +14,7 @@ class App extends React.PureComponent {
     <Switch>
       <Route exact path="/" component={PageWelcome}/>
       <Route exact path="/film/:id/review" component={PageFilmReview}/>
-      <Route exact path="/film/:id" component={PageFilm}/>
+      <Route path="/film/:id" component={PageFilm}/>
       <WithAuthRoute path="/my-list" component={PageMyList}/>
       <WithoutAuthRoute exact path="/login" component={PageSignIn}/>
     </Switch>
